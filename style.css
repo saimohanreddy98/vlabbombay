@@ -1,5 +1,5 @@
 body {
-    min-width: 410px;
+    min-width: 350px;
 }
 
 table {
@@ -28,7 +28,7 @@ th {
     align-items: center;
     
   
-    color: black;
+    color: gray;
     
 }
 
@@ -36,18 +36,18 @@ th {
     margin-right: 1.5px;
 }
 tr td:first-child{
-    background-color: rgb(155, 153, 155);
+    background-color: rgb(165, 186, 84);
 }
 
 button {
     height: 40px;
     width: 40px;
 
-    background-color: white;
+    background-color: rgb(110, 11, 11);
     
 }
 button:hover {
-    background-color: rgb(147, 37, 37);
+    background-color: orangered;
     
 }
 

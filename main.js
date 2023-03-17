@@ -7,7 +7,7 @@ const saveButton = document.getElementById("save-data");
 
 let selectedRow = [];
 
-let companyData = [
+let chemicalData = [
   {
     id: 1,
     name: "Ammonium Persulfate",
@@ -197,17 +197,14 @@ function generateTableRows(data) {
   });
   return rows;
 }
-
 function renderTable(data) {
   const table = document.querySelector("#example tbody");
   table.innerHTML = generateTableRows(data);
 }
-
-renderTable(companyData);
-
+renderTable(chemicalData);
 addButton.addEventListener("click", () => {
   let rows = {
-    id: companyData.length + 1,
+    id: chemicalData.length + 1,
     name: "",
     vendor: "",
     density: "",
@@ -217,25 +214,25 @@ addButton.addEventListener("click", () => {
     unit: "",
     quantity: "",
   };
-  companyData.push(rows);
+  chemicalData.push(rows);
   saveData();
-  renderTable(companyData);
+  renderTable(chemicalData);
 });
 
 function saveData() {
-  const newData = JSON.stringify(companyData);
+  const newData = JSON.stringify(chemicalData);
   localStorage.setItem(LOCAL_STORAGE, newData);
 }
 
 function getDataFromStorage() {
   const newData = localStorage.getItem(LOCAL_STORAGE);
-  let data = JSON.parse(newData) ? JSON.parse(newData) : companyData;
+  let data = JSON.parse(newData) ? JSON.parse(newData) : chemicalData;
   sortList(data);
-  return companyData;
+  return chemicalData;
 }
 
 function sortList(data) {
-  companyData = data.sort(function (a, b) {
+  chemicalData = data.sort(function (a, b) {
     return a.id - b.id;
   });
 }
@@ -256,7 +253,7 @@ function changeValue(e) {
   const value = element.innerHTML;
   const id = Number(element.dataset.rowId);
   const colName = element.dataset.rowName;
-  companyData = companyData.map((row) => {
+  chemicalData = chemicalData.map((row) => {
     if (row.id === id) {
       const obj = { ...row };
       obj[colName] = value;
@@ -267,31 +264,31 @@ function changeValue(e) {
 }
 
 function moveUp() {
-  for (let i = 1; i < companyData.length; i++) {
-    const row = companyData[i];
+  for (let i = 1; i < chemicalData.length; i++) {
+    const row = chemicalData[i];
     if (selectedRow.includes(row.id)) {
-      companyData[i - 1].id = row.id;
+      chemicalData[i - 1].id = row.id;
       row.id -= 1;
     }
   }
   selectedRow = [];
-  sortList(companyData);
+  sortList(chemicalData);
   saveData();
-  renderTable(companyData);
+  renderTable(chemicalData);
 }
 
 function moveDown() {
-  for (let i = companyData.length - 2; i >= 0; i--) {
-    const row = companyData[i];
+  for (let i = chemicalData.length - 2; i >= 0; i--) {
+    const row = chemicalData[i];
     if (selectedRow.includes(row.id)) {
-      companyData[i + 1].id = row.id;
+      chemicalData[i + 1].id = row.id;
       row.id += 1;
     }
   }
   selectedRow = [];
-  sortList(companyData);
+  sortList(chemicalData);
   saveData();
-  renderTable(companyData);
+  renderTable(chemicalData);
 }
 
 saveButton.addEventListener('click', () => {
@@ -300,26 +297,26 @@ saveButton.addEventListener('click', () => {
 
 refreshButton.addEventListener('click', () => {
   getDataFromStorage();
-  renderTable(companyData);
+  renderTable(chemicalData);
 })
 
 deleteButton.addEventListener('click', () => {
-  for (let i = 0; i < companyData.length; i++) {
-    const row = companyData[i];
+  for (let i = 0; i < chemicalData.length; i++) {
+    const row = chemicalData[i];
     if (selectedRow.includes(row.id)) {
-      companyData = companyData.filter((item) => item.id !== row.id);
+      chemicalData = chemicalData.filter((item) => item.id !== row.id);
     }
   }
   selectedRow = [];
   arrangeId();
-  sortList(companyData);
+  sortList(chemicalData);
   saveData();
-  renderTable(companyData);
+  renderTable(chemicalData);
 })
 
 function arrangeId() {
-  for (let i = 0; i < companyData.length; i++) {
-    const row = companyData[i];
+  for (let i = 0; i < chemicalData.length; i++) {
+    const row = chemicalData[i];
     row.id = i + 1;
   }
 }

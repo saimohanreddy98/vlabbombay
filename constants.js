@@ -1,1 +1,1 @@
-const LOCAL_STORAGE="chemicalSupplies";
+const LOCAL_STORAGE="chemicalSupplier";

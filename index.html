@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/a41e7e53b7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="toolbar">
+      <div>
+        <h1>Chemical supplier</h1>
+      </div>
+      <div class="toolbar">
+        <button id="add-row"><i class="fa-regular fa-plus"></i></button>
+        <button id="move-row-up" onclick="moveUp()"><i class="fa-solid fa-arrow-up"></i></button>
+        <button id="move-row-down" onclick="moveDown()"><i class="fa-sharp fa-solid fa-arrow-down"></i></button>
+        <button id="delete-row"><i class="fa-solid fa-trash-can"></i></button>
+        <button id="refresh-data"><i class="fa-solid fa-arrows-rotate"></i></button>
+        <button id="save-data"><i class="fa-regular fa-floppy-disk"></i></button>
+      </div>
+    </div>
+    <div class="container w-30 pt-5">
+    <table id="example" class="table table-striped" style="width: 100%">
+      <thead>
+        <tr>
+          <th id="id-check"><i class="fa-solid fa-square-check"></i></th>
+          <th id="id-header">ID</th>
+          <th id="name-header">Chemical Name</th>
+          <th id="vendor-header">Vendor</th>
+          <th id="density-header">Density</th>
+          <th id="viscosity-header">Viscosity</th>
+          <th id="packaging-header">Packaging</th>
+          <th id="pack-size-header">Pack Size</th>
+          <th id="unit-header">Unit</th>
+          <th id="quantity-header">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be dynamically added here -->
+      </tbody>
+    </table>
+    </div>
+    <script src="./constants.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

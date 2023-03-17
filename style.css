@@ -1,0 +1,88 @@
+body {
+    min-width: 410px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    background-color: blue;
+    color: bisque;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+th {
+    cursor: pointer;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  
+    color: black;
+    
+}
+
+.toolbar button {
+    margin-right: 8px;
+}
+tr td:first-child{
+    background-color: rgb(155, 153, 155);
+}
+
+button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+    
+}
+button:hover {
+    background-color: rgb(147, 37, 37);
+    
+}
+
+button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+/* styles for mobile screens */
+@media screen and (max-width: 500px) {
+    table {
+        display: flex;
+        width: 100%;
+    }
+
+    thead {
+        width: 100%;
+    }
+
+    thead > tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    tbody {
+        width: 100%;
+    }
+
+    tbody > tr {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    td {
+      display: flex;
+      justify-content: center;
+    }
+}

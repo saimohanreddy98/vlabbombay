@@ -1,4 +1,4 @@
-its a project where we can display the items and the data.
+its a project where we can display the data.
 >i have added different icons which are responsive
  a)add icon
  b)delete icon
@@ -7,3 +7,5 @@ its a project where we can display the items and the data.
  e)refresh
  f)save
  i have taken these icons from fonr awesome kit
+
+ In this project the data can be edited

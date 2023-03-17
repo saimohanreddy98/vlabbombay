@@ -40,9 +40,9 @@ tr td:first-child{
 }
 
 button {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+
     background-color: white;
     
 }
